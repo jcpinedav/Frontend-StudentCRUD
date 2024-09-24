@@ -1,0 +1,18 @@
+<div class="title">
+    <h1>Student</h1>
+</div>
+<div *ngIf="student != null" class="container">
+    <mat-card>
+        <mat-card-title>{{student.name}}</mat-card-title>
+        <mat-card-content>
+            <p><strong>Name:</strong> {{student.name}} </p>
+            <p><strong>Age:</strong> {{student.age}} </p>
+            <p><strong>Gender:</strong> {{student.gender}} </p>
+            <p><strong>Current Course:</strong> {{student.currentCourse}} </p>
+            <p><strong>Email:</strong> {{student.email}} </p>            
+        </mat-card-content>      
+        <mat-card-actions>
+            <button routerLink="/listStudents" mat-flat-button>Back</button> 
+        </mat-card-actions>  
+    </mat-card>
+</div>

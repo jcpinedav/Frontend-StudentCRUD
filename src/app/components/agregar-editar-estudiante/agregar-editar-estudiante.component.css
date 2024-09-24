@@ -1,0 +1,43 @@
+mat-card {
+    background-color: white;
+    color: black; 
+    padding: 16px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+    border-radius: 8px; 
+    margin-top: 5px;
+    text-align: center;
+  }
+  mat-card-title{
+    margin-bottom: 15px;
+  }
+
+  mat-card-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+  }
+  mat-card-subtitle{    
+    color: black;
+  }
+  mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 10px;
+  }
+  
+  mat-form-field {
+    display: block;
+  }
+  .green-button {
+    background-color: green;
+  }
+
+  .btn{
+    margin-right: 25px;
+  }
+
+  mat-form-field input {
+    color: black !important; /* Cambia el color del texto que se escribe a negro */
+  }
+  

@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    background-color: white;
+  }
+
+  th, td {
+    background-color: white;
+    color: black; 
+    width: 15%;
+  }
+
+.title{
+    padding: 30px;
+    background-color: #666;
+    text-align: center;
+    color: white;
+}
+
+mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.info{
+  cursor: pointer;
+  color: rgb(11, 141, 192);
+}
+.edit{
+  cursor: pointer;
+  color: rgb(30, 141, 3);
+}
+.delete{
+  cursor: pointer;
+  color: red;
+}
