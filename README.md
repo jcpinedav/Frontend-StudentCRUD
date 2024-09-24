@@ -8,10 +8,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 # Main Features
 ## List Students
-- On the main view, you can see a list of registered students along with their respective details, such as name, age, gender, current course, and email.
-1. The table supports pagination, allowing you to navigate through the list of students.
-2. The table can also be filtered by typing in the search bar and can be sorted by clicking on the     column headers for name and age.
-3. The data of the students is fetched from an API and displayed in table.
+1. On the main view, you can see a list of registered students along with their respective details, such as name, age, gender, current course, and email.
+2. The table supports pagination, allowing you to navigate through the list of students.
+3. The table can also be filtered by typing in the search bar and can be sorted by clicking on the     column headers for name and age.
+4. The data of the students is fetched from an API and displayed in table.
 ## Add Students
 A form allows adding a new student by entering their name, age, gender, current course, and email.
 Upon submitting the form, the data is validated and sent to the API to be recorded in the database.
