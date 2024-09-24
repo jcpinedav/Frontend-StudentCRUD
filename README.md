@@ -32,5 +32,5 @@ To do this, navigate to [src/environments/] and modify the endpoint value in env
 
 ## To run the application in a local development environment
 
-npm install
-ng serve --o
+1. npm install
+2. ng serve --o
