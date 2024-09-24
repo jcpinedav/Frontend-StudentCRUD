@@ -1,49 +1,59 @@
 <div class="title">
-    <h1>{{operation}} Student</h1>
+  <h1>{{operation}} Student</h1>
 </div>
 <app-spinner *ngIf="loading"></app-spinner>
 <div class="container">
-    <mat-card>
-        <mat-card-subtitle>
-            Student Information
-        </mat-card-subtitle>
-        <form [formGroup]="form" (ngSubmit)="AddEditStudent()">
-            <mat-grid-list cols="2" rowHeight="80px">
-                <mat-grid-tile [colspan]="2">
-                    <mat-form-field appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input formControlName="name" matInput placeholder="Name">
+  <mat-card>
+      <mat-card-subtitle>
+          Student Information
+      </mat-card-subtitle>
+      <form [formGroup]="form" (ngSubmit)="AddEditStudent()">
+          <mat-grid-list cols="2" rowHeight="80px">
+              <mat-grid-tile [colspan]="2">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Name</mat-label>
+                      <input formControlName="name" matInput placeholder="Name">
+                      <mat-error *ngIf="form.controls['name'].hasError('required')">Name is required</mat-error>
+                      <mat-error *ngIf="form.controls['name'].hasError('pattern')">Only letters allowed</mat-error>
                   </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-form-field appearance="outline">
-                    <mat-label>Age</mat-label>
-                    <input formControlName="age" matInput placeholder="Age">
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Age</mat-label>
+                      <input formControlName="age" matInput placeholder="Age">
+                      <mat-error *ngIf="form.controls['age'].hasError('required')">Age is required</mat-error>
+                      <mat-error *ngIf="form.controls['age'].hasError('pattern')">Only numbers allowed</mat-error>
                   </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-form-field appearance="outline">
-                    <mat-label>Gender</mat-label>
-                    <input formControlName="gender" matInput placeholder="Gender">
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Gender</mat-label>
+                      <input formControlName="gender" matInput placeholder="Gender">
+                      <mat-error *ngIf="form.controls['gender'].hasError('required')">Gender is required</mat-error>
+                      <mat-error *ngIf="form.controls['gender'].hasError('pattern')">Only letters allowed</mat-error>
                   </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-form-field appearance="outline">
-                    <mat-label>Current Course</mat-label>
-                    <input formControlName="currentCourse" matInput placeholder="Current Course">
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Current Course</mat-label>
+                      <input formControlName="currentCourse" matInput placeholder="Current Course">
+                      <mat-error *ngIf="form.controls['currentCourse'].hasError('required')">Current course is required</mat-error>
+                      <mat-error *ngIf="form.controls['currentCourse'].hasError('pattern')">Only letters allowed</mat-error>
                   </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile>
-                    <mat-form-field appearance="outline">
-                    <mat-label>email</mat-label>
-                    <input formControlName="email" matInput placeholder="Email">
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-form-field appearance="outline">
+                      <mat-label>Email</mat-label>
+                      <input formControlName="email" matInput placeholder="Email">
+                      <mat-error *ngIf="form.controls['email'].hasError('required')">Email is required</mat-error>
+                      <mat-error *ngIf="form.controls['email'].hasError('email')">Invalid email format</mat-error>
                   </mat-form-field>
-                </mat-grid-tile>
-                <mat-grid-tile [colspan]="2">
-                    <button type="submit" class="btn" [disabled] = "form.invalid" mat-flat-button color="warn">Accept</button> 
-                    <button routerLink="/listStudent" mat-flat-button color="accent">Back</button> 
-                </mat-grid-tile>
-              </mat-grid-list>
-        </form>
-    </mat-card>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="2">
+                  <button type="submit" class="btn" [disabled]="form.invalid" mat-flat-button color="warn">Accept</button> 
+                  <button routerLink="/listStudent" mat-flat-button color="accent">Back</button> 
+              </mat-grid-tile>
+          </mat-grid-list>
+      </form>
+  </mat-card>
 </div>

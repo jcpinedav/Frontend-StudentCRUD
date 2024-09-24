@@ -18,13 +18,12 @@ export class AgregarEditarEstudianteComponent implements OnInit{
 
   constructor(private fb: FormBuilder, private _studentServive: StudentService, private _sanackbar: MatSnackBar, private router: Router, private aRoute: ActivatedRoute) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      age: ['', Validators.required],
-      gender: ['', Validators.required],
-      currentCourse: ['', Validators.required],
-      email: ['', Validators.required],
-
-    })
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$')]], 
+      age: ['', [Validators.required, Validators.pattern('^[0-9]*$')]], 
+      gender: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1]*$')]], 
+      currentCourse: ['', [Validators.required, Validators.pattern('^[a-zA-ZÀ-ÿ\u00f1\u00d1 ]*$')]],
+      email: ['', [Validators.required, Validators.email]] 
+    });
     this.id = Number(this.aRoute.snapshot.paramMap.get('id'));
   }
 
@@ -75,7 +74,6 @@ export class AgregarEditarEstudianteComponent implements OnInit{
       this.loading = false;
       this.SuccessMessage('updated');
       this.router.navigate(['/listStudents']);
-
     })
   }
 
@@ -87,10 +85,9 @@ export class AgregarEditarEstudianteComponent implements OnInit{
   }
 
   SuccessMessage(input: string) {
-    this._sanackbar.open(`The student was succesfully ${input}.`,'', {
+    this._sanackbar.open(`The student was successfully ${input}.`,'', {
       duration: 2000,
       horizontalPosition: 'right',
     });
-    
   }
 }
